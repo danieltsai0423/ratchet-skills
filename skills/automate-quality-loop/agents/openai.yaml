@@ -1,0 +1,4 @@
+interface:
+  display_name: "導入外迴圈品質自動化"
+  short_description: "分階段安排排程、發版或告警觸發的測試、失敗回報與修復，讓品質流程可追蹤與暫停"
+  default_prompt: "用 $automate-quality-loop 評估這個專案是否適合加入發版後的品質測試排程。"

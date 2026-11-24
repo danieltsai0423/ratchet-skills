@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" role="img" aria-label="倒金字塔：把問題往上推到最便宜、最可靠的那一層">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="640" rx="18" fill="#0f172a"/>
+  <text x="40" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#f8fafc">倒金字塔：把問題往上推到最便宜、最可靠的那一層</text>
+  <path d="M90.0,96 L770.0,96 L723.0,172 L137.0,172 Z" fill="#16a34a" fill-opacity="0.9"/>
+  <text x="430" y="130" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">程式碼庫與架構</text>
+  <text x="430" y="154" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" fill-opacity="0.85">公開 API、型別、目錄邊界</text>
+  <path d="M142.0,180 L718.0,180 L671.0,256 L189.0,256 Z" fill="#65a30d" fill-opacity="0.9"/>
+  <text x="430" y="214" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">靜態分析與編譯</text>
+  <text x="430" y="238" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" fill-opacity="0.85">lint、型別檢查、依賴圖</text>
+  <path d="M194.0,264 L666.0,264 L619.0,340 L241.0,340 Z" fill="#ca8a04" fill-opacity="0.9"/>
+  <text x="430" y="298" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">執行期與形式驗證</text>
+  <text x="430" y="322" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" fill-opacity="0.85">正常入口重跑、屬性測試</text>
+  <path d="M246.0,348 L614.0,348 L567.0,424 L293.0,424 Z" fill="#ea580c" fill-opacity="0.9"/>
+  <text x="430" y="382" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">自然語言規則</text>
+  <text x="430" y="406" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" fill-opacity="0.85">AGENTS.md / CLAUDE.md</text>
+  <path d="M298.0,432 L562.0,432 L515.0,508 L345.0,508 Z" fill="#dc2626" fill-opacity="0.9"/>
+  <text x="430" y="466" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">人工審查</text>
+  <text x="430" y="490" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" fill-opacity="0.85">只留需要判斷的部分</text>
+  <line x1="62" y1="106" x2="62" y2="498" stroke="#94a3b8" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="48" y="302.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="16" fill="#94a3b8" transform="rotate(-90 48 302.0)" text-anchor="middle">成本遞增</text>
+  <path d="M820,102 h10 v148 h-10" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="784.0" y1="176.0" x2="814" y2="176.0" stroke="#fbbf24" stroke-opacity="0.35" stroke-dasharray="4 5"/>
+  <text x="842" y="182.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#fbbf24">enforce-codebase-constraints</text>
+  <path d="M820,270 h10 v64 h-10" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="680.0" y1="302.0" x2="814" y2="302.0" stroke="#fbbf24" stroke-opacity="0.35" stroke-dasharray="4 5"/>
+  <text x="842" y="308.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#fbbf24">verify-software-behavior</text>
+  <path d="M820,354 h10 v64 h-10" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+  <line x1="628.0" y1="386.0" x2="814" y2="386.0" stroke="#fbbf24" stroke-opacity="0.35" stroke-dasharray="4 5"/>
+  <text x="842" y="392.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#fbbf24">refine-agent-instructions</text>
+  <text x="842" y="476.0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'Noto Sans CJK TC', Helvetica, Arial, sans-serif" font-size="15" fill="#94a3b8">← 先看驗證證據</text>
+  <rect x="40" y="536" width="1020" height="40" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="550.0" y="562" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#38bdf8">audit-agent-engineering · 逐層盤點</text>
+  <rect x="40" y="588" width="1020" height="40" rx="10" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="550.0" y="614" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" fill="#a78bfa">automate-quality-loop · 外迴圈：排程 / 發版 / 告警觸發</text>
+</svg>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "盤點 Agent 工程環境"
+  short_description: "檢查架構、靜態分析、執行期驗證、規則文件與人工審查，排出改善順序"
+  default_prompt: "用 $audit-agent-engineering 盤點這個專案的 Agent 工程環境，列出最值得先改善的項目。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "以證據驗證軟體行為"
+  short_description: "用功能地圖、操作紀錄與屬性測試驗證軟體行為，供審查者重跑"
+  default_prompt: "用 $verify-software-behavior 從使用者入口驗證這次改動，提供可重跑的證據。"
