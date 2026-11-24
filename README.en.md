@@ -21,6 +21,8 @@
 
 The name comes from a **ratchet**, which turns one way and never slips back. Each time you correct an agent, that correction becomes a deterministic check. The violation baseline only tightens, so you never catch the same class of mistake in review twice.
 
+> 💡 The speaker's own, full implementation is [pstack](https://github.com/cursor/plugins/tree/main/pstack). See [How this differs from pstack](#how-this-differs-from-pstack) to choose.
+
 > **Language note:** the skill bodies (`SKILL.md`) are written in Traditional Chinese. Agents follow them fine in any language and reply in yours. English translations are welcome as PRs.
 
 ## Why
@@ -160,9 +162,36 @@ Issues and PRs are welcome. When adding or changing a skill:
 - Keep `SKILL.md` short. Put long material in `references/` and link to it.
 - CI checks frontmatter and runs both installers on all three operating systems.
 
+## How this differs from pstack
+
+The speaker, Lauren Tan (poteto), maintains the official, full implementation: [**pstack**](https://github.com/cursor/plugins/tree/main/pstack), in Cursor's official plugins repo. **If you want the complete workflow and mainly use Cursor or Claude Code, use pstack.** ratchet-skills is a smaller pack built on the same ideas, with these trade-offs:
+
+| | pstack | ratchet-skills |
+| --- | --- | --- |
+| Author | Lauren Tan herself (official) | Community rewrite of the talk's ideas |
+| Size | ~60 skills (24 of them principle skills), plus 22 playbooks, subagents and automations | 5 skills |
+| Invocation | Almost all set `disable-model-invocation`, so you type `/command`; main entry is `/poteto-mode` | No restriction: the agent loads a skill from its `description`, e.g. `enforce-codebase-constraints` right after you correct it |
+| Dependencies | Skills reference principle skills and subagents, so install the whole pack | Each skill stands alone; install just one if you like |
+| Agents | Cursor-first; Claude Code gets a generated adapter via its marketplace, and Cursor-only steps are skipped | Claude Code, Codex, Devin CLI by plain copy, no adapter |
+| Multi-model | Core design: `/arena`, `/swarm`, `/interrogate` run models in parallel and against each other | None; one agent |
+| Scope | A full engineering workflow: bug fixes, perf, features, PRs, overnight runs, writing style… | Only the inverted-pyramid path |
+| Language | English | Traditional Chinese |
+
+How they map:
+
+| ratchet-skills | Closest in pstack |
+| --- | --- |
+| `enforce-codebase-constraints` | `/correct`, `principle-encode-lessons-in-structure` |
+| `verify-software-behavior` | `/create-verification-skill`, `/create-formal-verification-skill`, `/tdd` (pstack generates a project-specific verify skill and keeps it current with `maintain-*`, which goes further than this pack) |
+| `refine-agent-instructions` | the rule table in `/correct` |
+| `automate-quality-loop` | automations and the `autopilot-*` and `babysit` playbooks |
+| `audit-agent-engineering` | No direct match: a layer-by-layer audit that ranks what to fix first |
+
+> Compared against pstack as of 2026-11-24. It may have changed since; check the pstack repo.
+
 ## Credits
 
-The core idea comes from Lauren Tan's AI Engineer Code Summit talk [All Code Is Slop (Except Mine)](https://www.youtube.com/watch?v=O_zcc6Xl12g), which walks the inverted pyramid of codebase, static analysis, verification, written rules and human review. The skills here are working procedures written from those ideas, not a transcript of the talk, and are not reviewed or endorsed by the speaker. The Electron, React and formal-methods practices from the talk appear in the skills as examples for the situations where they fit.
+The core idea comes from Lauren Tan's AI Engineer Code Summit talk [All Code Is Slop (Except Mine)](https://www.youtube.com/watch?v=O_zcc6Xl12g), which walks the inverted pyramid of codebase, static analysis, verification, written rules and human review. Her own official implementation is [pstack](https://github.com/cursor/plugins/tree/main/pstack). The skills here are working procedures written from those ideas, not a transcript of the talk, and are not reviewed or endorsed by the speaker. The Electron, React and formal-methods practices from the talk appear in the skills as examples for the situations where they fit.
 
 ## License
 

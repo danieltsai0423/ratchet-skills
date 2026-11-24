@@ -21,6 +21,8 @@
 
 名字取自**棘輪（ratchet）**：只能往一個方向轉緊，不會鬆回去。每次你糾正 Agent，就把那次糾正變成一道確定性檢查；違規基線只會收緊，同一類錯誤不必在審查裡再抓第二次。
 
+> 💡 演講者本人的官方完整版是 [pstack](https://github.com/cursor/plugins/tree/main/pstack)。兩者怎麼選，見 [與 pstack 的差異](#與-pstack-的差異)。
+
 ## 為什麼需要它
 
 Agent 會把程式碼庫裡的既有寫法當成範本。每多一份權宜寫法，下一次被複製的機率就更高。只靠在 `AGENTS.md` 加文字規則、或靠人工 review 硬抓，成本最高，也最不可靠。
@@ -158,9 +160,36 @@ ratchet-skills/
 - `SKILL.md` 保持精簡，長篇說明放 `references/`，用相對連結引導。
 - CI 會在三個作業系統上檢查 frontmatter 並實際跑兩個安裝器。
 
+## 與 pstack 的差異
+
+演講者 Lauren Tan（poteto）本人有一套官方的完整實作：[**pstack**](https://github.com/cursor/plugins/tree/main/pstack)，放在 Cursor 的官方 plugins repo。**想要完整的工作流程，而且主要用 Cursor 或 Claude Code，請直接用 pstack。** ratchet-skills 是依同一套觀念寫成的精簡版，取捨如下：
+
+| | pstack | ratchet-skills |
+| --- | --- | --- |
+| 作者 | Lauren Tan 本人（官方實作） | 社群依演講觀念改寫 |
+| 規模 | 約 60 個 skills（含 24 個原則 skill），另有 22 個 playbook、subagent 與 automations | 5 個 skills |
+| 觸發方式 | 幾乎全部設 `disable-model-invocation`，需手動輸入 `/指令`；主入口是 `/poteto-mode` | 不設限，Agent 依 `description` 自動載入，例如你一糾正它就會用上 `enforce-codebase-constraints` |
+| 相依性 | skills 之間互相引用原則 skill 與 subagent，要整包安裝 | 每個 skill 獨立，可只裝一個 |
+| 支援的 Agent | 以 Cursor 為主；Claude Code 透過 marketplace 安裝轉接版，Cursor 專屬功能會略過 | Claude Code、Codex、Devin CLI 直接複製即可，不需轉接 |
+| 多模型 | 核心設計：`/arena`、`/swarm`、`/interrogate` 讓多個模型平行嘗試與互相審查 | 無，單一 Agent 執行 |
+| 涵蓋範圍 | 整套工程流程：bug fix、效能、功能開發、開 PR、過夜自動跑、寫作風格⋯⋯ | 只聚焦倒金字塔這條主線 |
+| 語言 | 英文 | 繁體中文 |
+
+對應關係：
+
+| ratchet-skills | pstack 最接近的部分 |
+| --- | --- |
+| `enforce-codebase-constraints` | `/correct`、`principle-encode-lessons-in-structure` |
+| `verify-software-behavior` | `/create-verification-skill`、`/create-formal-verification-skill`、`/tdd`（pstack 會在你的專案裡產生專屬的驗證 skill，並有 `maintain-*` 維護它，比這裡更深入） |
+| `refine-agent-instructions` | `/correct` 的規則對照表 |
+| `automate-quality-loop` | automations 與 `autopilot-*`、`babysit` playbook |
+| `audit-agent-engineering` | 沒有直接對應：逐層盤點、排出改善優先順序 |
+
+> 以上比較依據 2026-11-24 的 pstack 內容，之後可能變動，請以 pstack 原始 repo 為準。
+
 ## 方法來源與致謝
 
-核心觀念來自 Lauren Tan 在 AI Engineer Code Summit 的演講 [All Code Is Slop (Except Mine)](https://www.youtube.com/watch?v=O_zcc6Xl12g)：以倒金字塔的順序，依序經過程式碼庫、靜態分析、驗證、文字規則與人工審查。本專案的技能內容是依該演講觀念整理、改寫的實作流程，並非演講逐字內容，也未經講者審閱或背書。演講中提到的 Electron、React 與形式驗證做法，在技能中保留為適用情境下的範例。
+核心觀念來自 Lauren Tan 在 AI Engineer Code Summit 的演講 [All Code Is Slop (Except Mine)](https://www.youtube.com/watch?v=O_zcc6Xl12g)：以倒金字塔的順序，依序經過程式碼庫、靜態分析、驗證、文字規則與人工審查。她本人的官方實作是 [pstack](https://github.com/cursor/plugins/tree/main/pstack)。本專案的技能內容是依該演講觀念整理、改寫的實作流程，並非演講逐字內容，也未經講者審閱或背書。演講中提到的 Electron、React 與形式驗證做法，在技能中保留為適用情境下的範例。
 
 ## 授權
 
