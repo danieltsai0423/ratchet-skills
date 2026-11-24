@@ -28,7 +28,7 @@ if (-not (Test-Path -LiteralPath $src -PathType Container)) {
 $available = @(Get-ChildItem -LiteralPath $src -Directory | Sort-Object Name | ForEach-Object { $_.Name })
 if ($List) {
     $available
-    return
+    exit 0
 }
 
 if ($Project) { $Scope = 'project' }
@@ -78,4 +78,6 @@ foreach ($dest in $dests) {
     }
 }
 
+# Always set an explicit exit code; otherwise $LASTEXITCODE keeps a stale value in the caller.
 if ($skipped) { exit 1 }
+exit 0
